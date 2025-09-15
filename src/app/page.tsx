@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
-import DataTable from "./components/DataTable";
+import DataTable from "../components/DataTable";
 
 export default function Home() {
   return (

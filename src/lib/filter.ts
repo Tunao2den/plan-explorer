@@ -1,12 +1,5 @@
-export type Item = {
-  id: number;
-  type: string;
-  title: string;
-  kcal: number;
-  tags: string[];
-};
-
-export type TypeFilter = 'all' | 'meal' | 'training';
+import type { Item } from "../types/Item";
+import type { TypeFilter } from "../types/TypeFilter";
 
 // Mirrors the filtered useMemo logic from DataTable
 export function filterItems(items: Item[], query: string, typeFilter: TypeFilter): Item[] {

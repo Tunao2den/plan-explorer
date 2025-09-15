@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { filterItems, type Item } from '../lib/filter';
+import { filterItems } from '../lib/filter';
+import type { Item } from '../types/Item';
 
 const items: Item[] = [
   { id: 1, type: 'meal', title: 'Chicken & Rice', kcal: 650, tags: ['high-protein', 'simple'] },
