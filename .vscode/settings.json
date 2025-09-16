@@ -1,4 +1,5 @@
 {
     "workbench.preferredDarkColorTheme": "Cursor Dark",
-    "workbench.colorTheme": "Cursor Dark"
+    "workbench.colorTheme": "Visual Studio Light",
+    "workbench.preferredHighContrastLightColorTheme": "Default Light+"
 }

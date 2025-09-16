@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
 import DataTable from "../components/DataTable";
+import CalorieCalculator from "../components/CalorieCalculator";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Track calories of your daily exercise and meals</h1>
+        <CalorieCalculator />
         <DataTable />
       </main>
     </div>

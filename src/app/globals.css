@@ -23,7 +23,7 @@ body {
 
 * {
   box-sizing: border-box;
-  padding: 0;
+  padding: 3px;
   margin: 0;
 }
 
