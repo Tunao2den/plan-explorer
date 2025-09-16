@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Plan Explorer
 
-## Getting Started
+A modern React application for tracking calories of daily exercises and meals.
 
-First, run the development server:
+##  Live Application
 
+Access the live application here: [Plan Explorer Live](...)
+
+##  Table of Contents
+
+- [Quick Start](#quick-start)
+- [Architecture Overview](#architecture-overview)
+- [Technical Implementation](#technical-implementation)
+- [Design Trade-Offs](#design-trade-offs)
+- [Development Tools](#development-tools)
+- [Future Roadmap](#future-roadmap)
+
+##  Quick Start
+
+### Installation & Development
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
+
+# Alternative package managers
 yarn dev
-# or
 pnpm dev
-# or
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Testing
+```bash
+# Run tests
+npm run test
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Run tests with detailed output
+npx vitest --reporter=verbose
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+##  Architecture Overview
 
-## Learn More
+### Component Structure
+```
+├──CalorieCalculator
+└──DataTable
+    ├── Toolbar (Sort, Filter controls)
+    ├── TableView (Data display with virtualization)
+    ├── SearchBar (Search items)
+    └── DetailsModal (Item details and editing)
+```
 
-To learn more about Next.js, take a look at the following resources:
+##  Technical Implementation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### State Management
+- React hooks for component-level state
+- Optimized re-renders with useMemo and useCallback
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Data Processing
+- Pure functions for filtering and sorting
+- Client-side data manipulation for instant feedback
+- Type-safe data transformations
 
-## Deploy on Vercel
+### Type System
+-  TypeScript definitions
+- Strict typing for all data structures
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ️ Design Trade-Offs
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Current Implementation Choices
+| Decision | Pros | Cons | Alternatives |
+|----------|------|------|-------------|
+| **Static JSON Data** | Simple, fast, easy development | Not updatable, not scalable | API integration, databases |
+| **Client-Side State** | No external dependencies, React-native | No persistence, hard to share state | Redux, Zustand, React Query |
+| **Pure Functions** | Highly testable, predictable | Less flexible for complex operations | Class-based services |
+| **Component Composition** | Reusable, testable components | More files, potential over-engineering | Monolithic components |
+| **Client-Side Processing** | Instant UI updates, works offline | Not scalable for large datasets | Server-side processing |
+
+
+## AI Assistance
+
+### Primary AI Tool: Cursor IDE
+- **Visual Design**: Design and implement CSS for intended styling
+- **Components**: Boilerplate code generation for React components
+- **Code Quality**: TypeScript assistance and best practices
+
+## Further Developments
+
+### Phase 1: Core CRUD Operations 
+- Create, Update, Delete operations for items
+- Form validation and error handling
+- Optimistic UI updates and data persistence
+
+### Phase 2: Enhanced Data Model 
+- Temporal data tracking (timestamps, schedules)
+- User-generated content (notes, ratings, comments)
+- Rich metadata (nutritional breakdowns)
+
+### Phase 3: API Integration 
+- RESTful API development
+- Real-time data synchronization
+- Offline-first capabilities with sync
+
+### Phase 4: User Authentication
+- User registration and authentication
+- Personal data isolation and security
+- Profile management and preferences
+
+### Phase 5: Recommendation Engine 
+- Goal-based meal suggestions
+- Nutritional optimization algorithms
+- Dietary restriction handling
+
+### Phase 6: AI-Powered Planning 
+- Behavioral pattern analysis
+- Dynamic meal plan generation
+- Integration with fitness trackers and health apps
