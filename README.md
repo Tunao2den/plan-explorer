@@ -4,7 +4,7 @@ A modern React application for tracking calories of daily exercises and meals.
 
 ##  Live Application
 
-Access the live application here: [Plan Explorer Live](...)
+Access the live application here: [Plan Explorer Live](https://plan-explorer.vercel.app/)
 
 ##  Table of Contents
 
